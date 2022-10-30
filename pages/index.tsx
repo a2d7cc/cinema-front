@@ -1,4 +1,4 @@
-import Home from '@/components/screens/home/Home'
+import Home from '@/components/ui/screens/home/Home'
 import type { NextPage } from 'next'
 
 const HomePage: NextPage = () => {
