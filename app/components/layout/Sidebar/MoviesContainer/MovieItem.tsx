@@ -3,11 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC } from 'react'
 
+import MaterialIcon from '@/components/ui/MaterialIcon'
+
 import { IMovie } from '@/shared/types/movie.types'
 
-import styles from './MoviesList.module.scss'
 import { getGenresListEach } from '@/utils/movie/getGenresList'
-import MaterialIcon from '@/components/ui/MaterialIcon'
+
+import styles from './MoviesList.module.scss'
 
 const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 	return (
@@ -26,19 +28,17 @@ const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 			</Link>
 			<div className={styles.info}>
 				<div>
-					<div className={styles.title}>
-						{movie.title}
-					</div>
+					<div className={styles.title}>{movie.title}</div>
 					<div className={styles.genres}>
-						{movie.genres.map((genre, idx) => <Link key={genre._id} href={getGenreUrl(genre.slug)}>
-							<a>
-								{getGenresListEach(idx, movie.genres.length, genre.name)}
-							</a>
-						</Link>)}
+						{movie.genres.map((genre, idx) => (
+							<Link key={genre._id} href={getGenreUrl(genre.slug)}>
+								<a>{getGenresListEach(idx, movie.genres.length, genre.name)}</a>
+							</Link>
+						))}
 					</div>
 				</div>
 				<div className={styles.rating}>
-					<MaterialIcon name='MdStarRate' />
+					<MaterialIcon name="MdStarRate" />
 					<span>{movie.rating.toFixed(1)}</span>
 				</div>
 			</div>

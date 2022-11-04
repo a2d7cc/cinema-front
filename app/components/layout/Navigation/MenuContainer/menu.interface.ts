@@ -1,13 +1,12 @@
-import { TypeMaterialiconName } from "@/shared/types/icons.types";
+import { TypeMaterialIconName } from '@/shared/types/icons.types'
 
 export interface IMenuItem {
-	icon: TypeMaterialiconName
+	icon: TypeMaterialIconName
 	title: string
 	link: string
 }
 
 export interface IMenu {
-	title: string;
-	items: IMenuItem[];
-
+	title: string
+	items: IMenuItem[]
 }
