@@ -25,7 +25,7 @@ const MainProvider: FC<TypeComponentAuthFields & PropsWithChildren> = ({ childre
 			<Provider store={store}>
 				<QueryClientProvider client={queryClient}>
 					<ReduxToast />
-					<AuthProvider Component={Component} >
+					<AuthProvider		 Component={Component} >
 						<Layout>{children}</Layout>
 					</AuthProvider>
 				</QueryClientProvider>

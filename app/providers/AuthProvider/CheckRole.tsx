@@ -14,7 +14,7 @@ const CheckRole: FC<TypeComponentAuthFields & PropsWithChildren> = ({
 
 	const Children = () => <>{children}</>
 
-	if (user?.isAdmin) return <Children/>
+	if (user?.isAdmin) return <Children />
 
 	if (isOnlyAdmin) {
 		router.pathname !== '/404' && router.replace('/404')
@@ -27,9 +27,7 @@ const CheckRole: FC<TypeComponentAuthFields & PropsWithChildren> = ({
 	else {
 		router.pathname !== '/auth' && router.replace('/auth')
 		return null
-	}
-
-	return <div>CheckRole</div>
+	} 
 }
 
 export default CheckRole
