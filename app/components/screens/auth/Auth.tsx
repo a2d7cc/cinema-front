@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import Button from '@/components/ui/form-elements/Button'
 import Heading from '@/components/ui/heading/Heading'
 
+import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
 
 import Meta from '@/utils/meta/Meta'
@@ -12,7 +13,6 @@ import styles from './Auth.module.scss'
 import AuthFields from './AuthFields'
 import { IAuthInput } from './auth.interface'
 import { useAuthRedirect } from './useAuthRedirect'
-import { useActions } from '@/hooks/useActions'
 
 const Auth: FC = () => {
 	useAuthRedirect()
@@ -32,8 +32,6 @@ const Auth: FC = () => {
 
 	const { login, register } = useActions()
 
-
-
 	const onSubmit: SubmitHandler<IAuthInput> = (data) => {
 		if (type === 'login') login(data)
 		else if (type === 'register') register(data)
@@ -41,7 +39,7 @@ const Auth: FC = () => {
 	}
 
 	return (
-		<Meta title="Auth">  
+		<Meta title="Auth">
 			<section className={styles.wrapper}>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Heading title="Auth" classname="mb-6" />

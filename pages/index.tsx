@@ -1,10 +1,9 @@
-import Home from '@/components/ui/screens/home/Home'
 import type { NextPage } from 'next'
 
+import Home from '@/components/screens/home/Home'
+
 const HomePage: NextPage = () => {
-  return (
-    <Home />
-  )
+	return <Home />
 }
 
 export default HomePage

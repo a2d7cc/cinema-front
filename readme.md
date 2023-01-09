@@ -190,3 +190,27 @@ yarn add js-cookie
 
 So some logic in AuthProvider, and then some logic in CheckRole for a admin, client pages and we are providing with types </br>
 modification to a basic page and then through structure forwarding tpage component to AuthProvider
+
+### Create Statistics
+
+- Create pages/manage folder ./index.tsx : nextjs default folder for a pages
+- Create app/screens/admin folder -> Admin components by default Statistics component -> ./statistics -> CountUsers component and PopularMovie</br>
+  with CountUsers component and PopularMovie component that called in Statistic component
+
+```
+pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Statistics.tsx -> ./CountUsers & ./PopularMovie
+```
+
+- Create AdminService for a requests
+- In components writting useQuery hook to get isLoading, data
+
+#### AdminNavigation
+
+- create AdminNavigation in ui folder -> map from data with AdminNavItem components
+  - create AdminNavItem -> structure: link>a
+  - create admin-navigation.interface.ts
+  - create admin-navigation.data.ts
+- create folders with pages in /pages/manage for links that in menu, and these comonents will refer to app/components/screens
+  - Using Meta inside and Heading component
+    </br></br>
+- writing styles
