@@ -214,3 +214,15 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
   - Using Meta inside and Heading component
     </br></br>
 - writing styles
+
+### List of users and deleting
+
+- Creating new ui elements for admin pages
+  - Creating AdminHeader with Interface
+    - Creating Button Component
+- Import AdminHeader in UserList Component
+- Writing useUsers hook to get allUsers, to deleteUser
+- Create UserService with these functionality
+</br>
+- Create AdminTable, AdminTableHeader, AdminTableItem, AdminActions
+

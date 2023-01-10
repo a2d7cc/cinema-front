@@ -1,12 +1,9 @@
-import { NextPage } from 'next';
-import React from 'react';
+import { NextPage } from 'next'
+import React from 'react'
 
+import GenreList from '@/components/screens/admin/genres/GenreList'
 
-
-import { NextPageAuth } from '@/shared/types/auth.types';
-import ActorList from '@/components/screens/admin/Actors/ActorList';
-import GenreList from '@/components/screens/admin/genres/GenreList';
-
+import { NextPageAuth } from '@/shared/types/auth.types'
 
 const GenreListPage: NextPageAuth = () => {
 	return <GenreList />

@@ -10,11 +10,9 @@ import SubHeading from '@/components/ui/heading/SubHeading'
 
 import { IMovie } from '@/shared/types/movie.types'
 
-import { AdminService } from '@/services/admin/adminService'
 import { MovieService } from '@/services/movie.service'
 
 import styles from '../Admin.module.scss'
-import MovieList from '../movies/MovieList'
 
 const PopularMovie: FC = () => {
 	const { isLoading, data: movie } = useQuery(
