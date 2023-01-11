@@ -1,11 +1,8 @@
-import Auth from '@/components/ui/screens/auth/Auth'
 import { removeTokensStorage } from '@/services/auth/auth.helper'
 import { AuthService } from '@/services/auth/auth.service'
-import { original } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { API_URL } from 'config/api.config'
 import Cookies from 'js-cookie'
-import { config } from 'process'
 
 import { errorCatch, getContentType } from './api.helpers'
 

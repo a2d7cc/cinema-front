@@ -6,25 +6,24 @@ import AdminTable from '@/components/ui/admin-table/AdminTable/AdminTable'
 import Heading from '@/components/ui/heading/Heading'
 
 import Meta from '@/utils/meta/Meta'
-import { useGenres } from './useGenres'
+import { useMovies } from './useMovies'
 
-
-const GenreList: FC = () => {
-	const { handleSearch, isLoading, searchTerm, data, deleteAsync } = useGenres()
+const MovieList: FC = () => {
+	const { handleSearch, isLoading, searchTerm, data, deleteAsync } = useMovies()
 
 	return (
-		<Meta title="Genres">
+		<Meta title="Movies">
 			<AdminNavigation />
-			<Heading title="Genres" />
+			<Heading title="Movies" />
 			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
 			<AdminTable
 				isLoading={isLoading}
 				removeHandler={deleteAsync}
-				headerItems={['Name', 'Slug']}
+				headerItems={['Title', 'Genre', 'Rating']}
 				tableItems={data || []}
 			/>
 		</Meta>
 	)
 }
 
-export default GenreList
+export default MovieList

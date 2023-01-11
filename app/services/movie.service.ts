@@ -1,6 +1,7 @@
-import { IMovie } from "@/shared/types/movie.types"
-import { axiosClassic } from "api/interceptors"
-import { getMovieUrl } from "config/url.config"
+import instance, { axiosClassic } from 'api/interceptors'
+import { getMovieUrl } from 'config/url.config'
+
+import { IMovie } from '@/shared/types/movie.types'
 
 export const MovieService = {
 	async getAll(searchTerm?: string) {
@@ -14,7 +15,13 @@ export const MovieService = {
 	},
 
 	async getMostPopularMovies() {
-		const {data: movies} = await axiosClassic.get<IMovie[]>(getMovieUrl('/most-popular'))
-		return movies;
-	}
+		const { data: movies } = await axiosClassic.get<IMovie[]>(
+			getMovieUrl('/most-popular')
+		)
+		return movies
+	},
+
+	async deleteMovie(_id: string) {
+		return instance.delete<string>(getMovieUrl(`/${_id}`))
+	},
 }

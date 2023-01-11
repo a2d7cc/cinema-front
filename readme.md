@@ -226,3 +226,23 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 </br>
 - Create AdminTable, AdminTableHeader, AdminTableItem, AdminActions
 
+
+### Creating other pages: Movies, Genres, Actors
+- We are copying file from UserList, useUsers and modife for  these pages purpose
+- Also creating services for these pages
+
+### Creating GenreEdit Page and useGenreEdit hook
+- Creating hook
+  - useRouter for a push, genreId
+  - using useQuery request to get data
+    - we are using provided from props setValue, it's from hook-form library
+    - through keys of object making setValue
+  - using useQuery request to update mutate data
+    - onSuccess push to GenreList to see result
+</br></br>
+- GenreEdit structure
+  - useForm hook
+  - useGenreEdit(setValue) hook
+  - creating <form></form> with handleSubmit and in form, registrieren <Field>
+
+  

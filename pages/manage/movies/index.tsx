@@ -1,12 +1,11 @@
 import { NextPage } from 'next'
 import React from 'react'
 
-import MovieList from '@/components/screens/admin/movies/MovieList'
-
 import { NextPageAuth } from '@/shared/types/auth.types'
+import MoviesList from '@/components/screens/admin/movies/MoviesList'
 
 const MovieListPage: NextPageAuth = () => {
-	return <MovieList />
+	return <MoviesList />
 }
 
 MovieListPage.isOnlyAdmin = true
