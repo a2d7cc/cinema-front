@@ -249,3 +249,28 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 
 - npm i draft-js draftjs-to-html html-to-draftjs react-draft-wysiwyg sting-strip-html
 - writting types in form.interface.ts
+- some setting and configuring text editor
+
+### Creating Genre
+
+- in useGenre hook creating createAsync method, which referr to GenreService create method
+  - onSuccess notify and push to edit page
+- in GenreList throught to AdminHeader this createAsync method, then thorught to AdminCreateButton
+- in EditPage we are having form, and on form method which update information of genre and then push to EditList page
+
+### Copy genre to other Entity like Movie, Genre
+
+- Copy from useGenre create method to useMovie, useActor, also from GenreService create method to MovieService, ActorService
+- Copy genre folder in screens, and then rename genre to actor, movie in interfaces
+- Change name in useMovieEdit, useActorEdit from Genre, genre
+- Change name in MovieEdit, ActorEdit from Genre, genre
+- copy in pages dafeult folder for nextjs genre->edit-<[id].tsx>
+
+### Upload File
+
+- UploadService
+- Create in ui/form-elements UploadField folder
+- Creating hook useUpload with useMutation that call upload service and handleFunction to make from file form data and then </br>
+  call useMutation with this data
+- Creating UploadField.tsx with interface
+- Adding through Controller from useForm in ActorEdit form fields

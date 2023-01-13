@@ -1,4 +1,6 @@
+import { getGenresUrl } from 'config/api.config'
 import { getAdminUrl } from 'config/url.config'
+import { useRouter } from 'next/router'
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
@@ -10,9 +12,8 @@ import { useDebounce } from '@/hooks/useDebounce'
 import { MovieService } from '@/services/movie.service'
 
 import { convertMongoDate } from '@/utils/data/convertMongoDate'
-import { toastrError } from '@/utils/toastr-error'
-import { getGenresUrl } from 'config/api.config'
 import { getGenresList } from '@/utils/movie/getGenresList'
+import { toastrError } from '@/utils/toastr-error'
 
 export const useMovies = () => {
 	const [searchTerm, setSearchTerm] = useState('')
@@ -27,7 +28,11 @@ export const useMovies = () => {
 					(movie): ITableItem => ({
 						_id: movie._id,
 						editUrl: getAdminUrl(`movie/edit/${movie._id}`),
-						items: [movie.title, getGenresList(movie.genres), String(movie.rating)],
+						items: [
+							movie.title,
+							getGenresList(movie.genres),
+							String(movie.rating),
+						],
 					})
 				),
 			onError(error) {
@@ -36,9 +41,25 @@ export const useMovies = () => {
 		}
 	)
 
+	const { push } = useRouter()
+
+	const { mutateAsync: createAsync } = useMutation(
+		'create movie',
+		() => MovieService.create(),
+		{
+			onError(error) {
+				toastrError(error, 'Create movie')
+			},
+			onSuccess({ data: _id }) {
+				toastr.success('Create movie', 'create was successful')
+				push(getAdminUrl(`movie/edit/${_id}`))
+			},
+		}
+	)
+
 	const { mutateAsync: deleteAsync } = useMutation(
 		'delete movie',
-		(movieId: string) => MovieService.deleteMovie(movieId),
+		(movieId: string) => MovieService.delete(movieId),
 		{
 			onError(error) {
 				toastrError(error, 'Delete movie')
@@ -59,8 +80,9 @@ export const useMovies = () => {
 			handleSearch,
 			...queryData,
 			searchTerm,
+			createAsync,
 			deleteAsync,
 		}),
-		[queryData, searchTerm, deleteAsync]
+		[queryData, searchTerm, createAsync, deleteAsync]
 	)
 }
