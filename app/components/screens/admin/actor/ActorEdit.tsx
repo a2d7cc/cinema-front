@@ -17,6 +17,7 @@ import generateSlug from '@/utils/string/generateSlug'
 
 import { IActorEditInput } from './actor-edit.interface'
 import { useActorEdit } from './useActorEdit'
+import UploadField from '@/components/ui/form-elements/UploadField/UploadField'
 
 const DynamicTextEditor = dynamic(
 	() => import('@/ui/form-elements/TextEditor'),
@@ -68,7 +69,7 @@ const ActorEdit: FC = () => {
 								/>
 							</div>
 
-							{/* <Controller
+						<Controller
 							name="photo"
 							control={control}
 							defaultValue=""
@@ -76,12 +77,18 @@ const ActorEdit: FC = () => {
 								field: { value, onChange },
 								fieldState: { error },
 							}) => (
-								//photo upload
+								<UploadField
+									placeholder="Photo"
+									error={error}
+									folder="actors"
+									image={value}
+									onChange={onChange}
+								/>
 							)}
 							rules={{
-								required: 'Photo is required'
+								required: 'Photo is required!',
 							}}
-						/> */}
+						/>
 						</div>
 						<Button>Update</Button>
 					</>

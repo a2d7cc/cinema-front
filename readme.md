@@ -274,3 +274,5 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
   call useMutation with this data
 - Creating UploadField.tsx with interface
 - Adding through Controller from useForm in ActorEdit form fields
+
+
