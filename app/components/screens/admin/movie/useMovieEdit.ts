@@ -11,7 +11,7 @@ import { toastrError } from '@/utils/toastr-error'
 
 import { IMovieEditInput } from './movie-edit.interface'
 
-export const useGenreEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
+export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 	const { push, query } = useRouter()
 
 	const movieId = String(query.id)

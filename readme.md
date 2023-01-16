@@ -275,4 +275,11 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 - Creating UploadField.tsx with interface
 - Adding through Controller from useForm in ActorEdit form fields
 
+### Reselect
 
+- Writting Hooks
+  - useAdminGenre
+  - useAdminActor
+- Creating in UI folder for a Select component
+- Writting Interface
+- Writting Select.tsx component
