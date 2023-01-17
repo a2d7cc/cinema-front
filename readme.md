@@ -315,3 +315,13 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 
 - creating fresh in default nextjs page folder
 - creating trending page
+
+### Profile
+
+- profile pages default nextjs refer to Probile component
+  </br>
+- create Profile component in screens folder
+- create interface
+- create useProfile
+  </br>
+- create a user folder in pages/manage folder for a admin area !forgot to make it before
