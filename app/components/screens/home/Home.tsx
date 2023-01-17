@@ -1,15 +1,26 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import Heading from '@/components/ui/heading/Heading'
-import Slider from '@/components/ui/slider/Slider'
 
-import Meta from '@/utils/meta/Meta'
 
-import { IHome } from './Home.interface'
+import Gallery from '@/components/ui/gallery/Gallery';
+import Heading from '@/components/ui/heading/Heading';
+import SubHeading from '@/components/ui/heading/SubHeading';
+import Slider from '@/components/ui/slider/Slider';
 
-import styles from 'Home.module.scss'
 
-const Home: FC<IHome> = ({ slides }) => {
+
+import Meta from '@/utils/meta/Meta';
+
+
+
+import { IHome } from './Home.interface';
+
+
+
+import styles from 'Home.module.scss';
+
+
+const Home: FC<IHome> = ({ slides, actors, trendingMovies }) => {
 	return (
 		<Meta
 			title="Watch movie online"
@@ -21,6 +32,16 @@ const Home: FC<IHome> = ({ slides }) => {
 			/>
 
 			{slides.length && <Slider slides={slides} />}
+
+			<div className="my-10">
+				<SubHeading title="Trending now" />
+				{trendingMovies.length && <Gallery items={trendingMovies} />}
+			</div>
+
+			<div>
+				<SubHeading title="Best actors" />
+				{actors.length && <Gallery items={actors} />}
+			</div>
 		</Meta>
 	)
 }

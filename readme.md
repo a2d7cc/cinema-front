@@ -295,3 +295,14 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 - Writting animation
 - in screens/Home import Slider
 - in main page Home writting getStaticProps to get from server movies and through this data to Home component
+
+### Gallery
+
+- Creating gallery folder in ui
+  - Gallery Interface
+  - Gallery Component
+  - Gallery Item component
+- in index Page
+- load data for trrending movies, actors from getStaticProps
+- and through map transforming data
+- adding this values to return {}
