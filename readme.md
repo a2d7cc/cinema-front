@@ -283,3 +283,15 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 - Creating in UI folder for a Select component
 - Writting Interface
 - Writting Select.tsx component
+
+### Slider
+
+- install react-transition-group
+- writting slider types
+- useSlider hook where there are all logic and export function, variable
+- SliderArrow component
+- SliderItem component
+- Slider component
+- Writting animation
+- in screens/Home import Slider
+- in main page Home writting getStaticProps to get from server movies and through this data to Home component
