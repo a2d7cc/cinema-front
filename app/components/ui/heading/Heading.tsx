@@ -2,15 +2,15 @@ import React, { FC } from 'react'
 
 interface IHeading {
 	title: string
-	classname?: string
+	className?: string
 }
 
-const Heading: FC<IHeading> = ({ title, classname }) => {
+const Heading: FC<IHeading> = ({ title, className }) => {
 	return (
 		<h1
 			className={`text-white text-opacity-80 font-semibold ${
-				classname?.includes('xl') ? '' : 'text-3xl'
-			} ${classname}`}
+				className?.includes('xl') ? '' : 'text-3xl'
+			} ${className}`}
 		>
 			{title}
 		</h1>

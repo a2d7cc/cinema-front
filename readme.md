@@ -306,3 +306,12 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 - load data for trrending movies, actors from getStaticProps
 - and through map transforming data
 - adding this values to return {}
+
+### Catalog
+
+- install library html-react-parser
+- writting in ui folder catalog-movies
+- writting styles, interface, component
+
+- creating fresh in default nextjs page folder
+- creating trending page
