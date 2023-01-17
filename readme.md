@@ -325,3 +325,12 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 - create useProfile
   </br>
 - create a user folder in pages/manage folder for a admin area !forgot to make it before
+
+### Movie Page
+
+- Creating in default pages folder by slug movie folder
+- Writing getStaticProps, getsStaticPaths and return SingleMovie component
+- Writting SingleMovie component
+- Writting Banner component
+- Writting Content component, part of single movie page
+- Writting ContentList component

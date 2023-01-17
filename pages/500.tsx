@@ -1,6 +1,6 @@
 import Heading from '@/components/ui/heading/Heading'
-import Meta from '@/utils/meta/Meta'
 
+import Meta from '@/utils/meta/Meta'
 
 export default function Error500() {
 	return (

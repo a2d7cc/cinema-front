@@ -17,6 +17,10 @@ export const MovieService = {
 		})
 	},
 
+	async getBySlug(slug: string) {
+		return axiosClassic.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`))
+	},
+
 	async getMostPopularMovies() {
 		const { data: movies } = await axiosClassic.get<IMovie[]>(
 			getMovieUrl('/most-popular')
