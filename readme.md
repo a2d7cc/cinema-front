@@ -334,3 +334,20 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 - Writting Banner component
 - Writting Content component, part of single movie page
 - Writting ContentList component
+
+### Video Player
+
+- creating in ui: VideoPlayer, useVideo, types
+- creating AuthPlaceholder folder with AuthPlaceholder component, AuthButton component
+- AuthButton make redirect, after succefull auth process
+  </br>
+- useVideo
+  - Play Button
+  - forward, revert 10s
+  - fullscreen
+  - hotkeys: space, f, arrows left, right,
+- videoRef to element
+- state for isPlaying, setCurrentTime, setVideoTime, setProgress
+- videoRef.current it's default to video tag element
+- writting useEffects to control functional of a player
+- with dynamic attach videoplayer in SingleMovie component

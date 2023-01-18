@@ -1,4 +1,5 @@
 import cn from 'classnames'
+import dynamic from 'next/dynamic'
 import React, { FC } from 'react'
 
 import Banner from '@/components/ui/banner/Banner'
@@ -10,13 +11,17 @@ import { IMovie } from '@/shared/types/movie.types'
 
 import Meta from '@/utils/meta/Meta'
 
-import './SingleMovie.module.scss'
 import Content from './Content/Content'
+import './SingleMovie.module.scss'
 
 export interface IMoviePage {
 	movie: IMovie
 	similarMovies: IGalleryItem[]
 }
+
+const DynamicPlayer = dynamic(() => import('@/ui/video-player/VideoPlayer'), {
+	ssr: false,
+})
 
 const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 	return (
@@ -26,7 +31,7 @@ const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 				Detail={() => <Content movie={movie} />}
 			/>
 
-			{/* <DynamicPlayer videoSource={movie.videoUrl} slug={movie.slug} /> */}
+			<DynamicPlayer videoSource={movie.videoUrl} slug={movie.slug} />
 
 			<div className="mt-12">
 				<SubHeading title="Similar" />
