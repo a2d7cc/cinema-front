@@ -351,3 +351,15 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 - videoRef.current it's default to video tag element
 - writting useEffects to control functional of a player
 - with dynamic attach videoplayer in SingleMovie component
+
+### Rate Movie
+
+- Creating RateMovie folder in single-movie folder
+- install react-star-rating-component
+- Creating rating service
+- wrtting useRating hook
+- useState rating
+- useState isSenden for a popup
+- Writting react-query function to get value(with refetch, to have actualise data), mutate to update
+- Creating Rating component
+- install npm i -D @types/react-star-rating-component
