@@ -42,7 +42,7 @@ const Auth: FC = () => {
 		<Meta title="Auth">
 			<section className={styles.wrapper}>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<Heading title="Auth" classname="mb-6" />
+					<Heading title="Auth" className="mb-6" />
 
 					<AuthFields
 						formState={formState}

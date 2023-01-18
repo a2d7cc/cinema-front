@@ -6,6 +6,7 @@ import { IGenre, IMovie } from '@/shared/types/movie.types'
 
 import { GenreService } from '@/services/genre.service'
 import { MovieService } from '@/services/movie.service'
+
 import Error404 from '../404'
 
 interface IGenrePage {
@@ -14,13 +15,15 @@ interface IGenrePage {
 }
 
 const GenrePage: NextPage<IGenrePage> = ({ movies, genre }) => {
-	return genre? (
+	return genre ? (
 		<Catalog
 			movies={movies || []}
 			title={genre.name}
 			description={genre.description}
 		/>
-	) : <Error404 />
+	) : (
+		<Error404 />
+	)
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -51,6 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 		return {
 			props: { movies, genre },
+			revalidate: 60,
 		}
 	} catch (e) {
 		// console.log(errorCatch(e))

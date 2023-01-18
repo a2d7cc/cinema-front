@@ -1,9 +1,10 @@
-import { UserService } from '@/services/user.service'
-import { toastrError } from '@/utils/toastr-error'
 import cn from 'classnames'
 import { FC, useEffect, useState } from 'react'
 import { useMutation } from 'react-query'
 
+import { UserService } from '@/services/user.service'
+
+import { toastrError } from '@/utils/toastr-error'
 
 import { useFavorites } from '../../favorites/useFavorites'
 
@@ -42,7 +43,7 @@ const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
 			className={cn(styles.button, {
 				[styles.animate]: isSmashed,
 			})}
-			style={{ backgroundImage: `url(${HeartImage.src})` }}
+			style={{ backgroundImage: `url('/heart-animation.png'})` }}
 		/>
 	)
 }

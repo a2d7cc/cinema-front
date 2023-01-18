@@ -21,6 +21,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		const movies = await MovieService.getMostPopularMovies()
 		return {
 			props: { movies },
+			revalidate: 60,
 		}
 	} catch (e) {
 		// console.log(errorCatch(e))
