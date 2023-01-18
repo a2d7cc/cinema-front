@@ -21,6 +21,13 @@ const AuthItems: FC = () => {
 							title: 'Profile',
 						}}
 					/>
+					<MenuItem
+						item={{
+							icon: 'MdList',
+							link: '/favorites',
+							title: 'Favorites',
+						}}
+					/>
 					<LogoutButton />
 				</>
 			) : (

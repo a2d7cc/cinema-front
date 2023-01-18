@@ -368,3 +368,23 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 
 - writting useCountOpened hook
 - using useEffect and writting request to backend
+
+### Favorites
+
+- write functional in user.service
+  </br>
+- Favorite page default nextjs
+- To Favorite folder in screens
+  - useFavorite hook
+  - Interface
+  - Favorite Component
+  - FavoriteItem
+    </br>
+- creating FavoriteButton in single-movie folder
+- this component too used useFavorite hook
+
+</br>
+- in sidebar/MoviesContainer/FavoriteMovies
+  - FavoriteMovies - favorite list in sidebar
+  - NotAuthFavorites - for authorize purpose
+  - writting useFavorites, but in screen/favorites

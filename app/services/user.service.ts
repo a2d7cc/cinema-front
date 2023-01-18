@@ -3,6 +3,7 @@ import { GetUsersUrl } from 'config/api.config'
 
 import { IProfileInput } from '@/components/screens/profile/Profile.interface'
 
+import { IMovie } from '@/shared/types/movie.types'
 import { IUser } from '@/shared/types/user.types'
 
 export const UserService = {
@@ -34,5 +35,15 @@ export const UserService = {
 
 	async deleteUser(_id: string) {
 		return instance.delete<string>(GetUsersUrl(`/${_id}`))
+	},
+
+	async getFavorites() {
+		return instance.get<IMovie[]>(GetUsersUrl('/profile/favorites'))
+	},
+
+	async toggleFavorite(movieId: string) {
+		return instance.put(GetUsersUrl('/profile/favorites'), {
+			movieId,
+		})
 	},
 }
