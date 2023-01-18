@@ -19,7 +19,6 @@ const TrendingPage: NextPage<{ movies: IMovie[] }> = ({ movies }) => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	try {
 		const movies = await MovieService.getMostPopularMovies()
-
 		return {
 			props: { movies },
 		}

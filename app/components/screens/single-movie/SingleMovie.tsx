@@ -13,6 +13,7 @@ import Meta from '@/utils/meta/Meta'
 
 import Content from './Content/Content'
 import './SingleMovie.module.scss'
+import { useUpdateCountOpened } from './useUpdateCountOpened'
 
 export interface IMoviePage {
 	movie: IMovie
@@ -28,6 +29,8 @@ const DynamicRateMovie = dynamic(() => import('./RateMovie/RateMovie'), {
 })
 
 const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
+	useUpdateCountOpened(movie.slug)
+
 	return (
 		<Meta title={movie.title} description={`Watch ${movie.title}`}>
 			<Banner

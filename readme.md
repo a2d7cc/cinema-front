@@ -363,3 +363,8 @@ pages/manage/index.tsx -> components/screens/admin/Admin.tsx -> ./statistics/Sta
 - Writting react-query function to get value(with refetch, to have actualise data), mutate to update
 - Creating Rating component
 - install npm i -D @types/react-star-rating-component
+
+### CountOpened
+
+- writting useCountOpened hook
+- using useEffect and writting request to backend
